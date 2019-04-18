@@ -51,7 +51,6 @@ namespace TheStore
                     products.Add(product);
                 }
             }
-
             try
             {
 

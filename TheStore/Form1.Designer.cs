@@ -47,12 +47,15 @@
             this.howManyItemsTextBox = new System.Windows.Forms.TextBox();
             this.nameOfItemTextBox = new System.Windows.Forms.TextBox();
             this.AddBtn = new System.Windows.Forms.Button();
+            this.ShoppingCartDataGridView = new System.Windows.Forms.DataGridView();
+            this.RegistrateBtn = new System.Windows.Forms.Button();
             this.Views.SuspendLayout();
             this.StoreView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StoreDataGridView)).BeginInit();
             this.WarehouseView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WareHouseGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShoppingCartDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Views
@@ -62,17 +65,19 @@
             this.Views.Location = new System.Drawing.Point(2, 2);
             this.Views.Name = "Views";
             this.Views.SelectedIndex = 0;
-            this.Views.Size = new System.Drawing.Size(841, 481);
+            this.Views.Size = new System.Drawing.Size(1183, 622);
             this.Views.TabIndex = 3;
             this.Views.SelectedIndexChanged += new System.EventHandler(this.Views_SelectedIndexChanged);
             // 
             // StoreView
             // 
+            this.StoreView.Controls.Add(this.RegistrateBtn);
+            this.StoreView.Controls.Add(this.ShoppingCartDataGridView);
             this.StoreView.Controls.Add(this.StoreDataGridView);
             this.StoreView.Location = new System.Drawing.Point(4, 22);
             this.StoreView.Name = "StoreView";
             this.StoreView.Padding = new System.Windows.Forms.Padding(3);
-            this.StoreView.Size = new System.Drawing.Size(833, 455);
+            this.StoreView.Size = new System.Drawing.Size(1175, 596);
             this.StoreView.TabIndex = 0;
             this.StoreView.Text = "Store View";
             this.StoreView.UseVisualStyleBackColor = true;
@@ -80,9 +85,9 @@
             // StoreDataGridView
             // 
             this.StoreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StoreDataGridView.Location = new System.Drawing.Point(360, 55);
+            this.StoreDataGridView.Location = new System.Drawing.Point(700, 266);
             this.StoreDataGridView.Name = "StoreDataGridView";
-            this.StoreDataGridView.Size = new System.Drawing.Size(462, 388);
+            this.StoreDataGridView.Size = new System.Drawing.Size(469, 324);
             this.StoreDataGridView.TabIndex = 0;
             // 
             // WarehouseView
@@ -97,7 +102,7 @@
             this.WarehouseView.Location = new System.Drawing.Point(4, 22);
             this.WarehouseView.Name = "WarehouseView";
             this.WarehouseView.Padding = new System.Windows.Forms.Padding(3);
-            this.WarehouseView.Size = new System.Drawing.Size(833, 455);
+            this.WarehouseView.Size = new System.Drawing.Size(1175, 596);
             this.WarehouseView.TabIndex = 1;
             this.WarehouseView.Text = "Warehouse View";
             this.WarehouseView.UseVisualStyleBackColor = true;
@@ -105,14 +110,14 @@
             // WareHouseGridView
             // 
             this.WareHouseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.WareHouseGridView.Location = new System.Drawing.Point(278, 118);
+            this.WareHouseGridView.Location = new System.Drawing.Point(622, 275);
             this.WareHouseGridView.Name = "WareHouseGridView";
             this.WareHouseGridView.Size = new System.Drawing.Size(544, 315);
             this.WareHouseGridView.TabIndex = 5;
             // 
             // hideBtn
             // 
-            this.hideBtn.Location = new System.Drawing.Point(116, 410);
+            this.hideBtn.Location = new System.Drawing.Point(109, 567);
             this.hideBtn.Name = "hideBtn";
             this.hideBtn.Size = new System.Drawing.Size(104, 23);
             this.hideBtn.TabIndex = 4;
@@ -122,7 +127,7 @@
             // 
             // ShowBtn
             // 
-            this.ShowBtn.Location = new System.Drawing.Point(13, 410);
+            this.ShowBtn.Location = new System.Drawing.Point(6, 567);
             this.ShowBtn.Name = "ShowBtn";
             this.ShowBtn.Size = new System.Drawing.Size(97, 23);
             this.ShowBtn.TabIndex = 3;
@@ -132,7 +137,7 @@
             // 
             // orderBtn
             // 
-            this.orderBtn.Location = new System.Drawing.Point(13, 178);
+            this.orderBtn.Location = new System.Drawing.Point(6, 161);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(75, 23);
             this.orderBtn.TabIndex = 2;
@@ -142,7 +147,7 @@
             // 
             // removeBtn
             // 
-            this.removeBtn.Location = new System.Drawing.Point(13, 148);
+            this.removeBtn.Location = new System.Drawing.Point(6, 131);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Size = new System.Drawing.Size(75, 23);
             this.removeBtn.TabIndex = 1;
@@ -162,7 +167,7 @@
             this.groupBox1.Controls.Add(this.nameOfItemTextBox);
             this.groupBox1.Location = new System.Drawing.Point(4, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(823, 88);
+            this.groupBox1.Size = new System.Drawing.Size(1162, 88);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add an Item";
@@ -170,7 +175,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(548, 32);
+            this.label4.Location = new System.Drawing.Point(956, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 7;
@@ -179,7 +184,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(368, 34);
+            this.label3.Location = new System.Drawing.Point(658, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 6;
@@ -188,7 +193,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(185, 32);
+            this.label2.Location = new System.Drawing.Point(393, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 5;
@@ -197,7 +202,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 29);
+            this.label1.Location = new System.Drawing.Point(63, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
@@ -205,7 +210,7 @@
             // 
             // categoriTextBox
             // 
-            this.categoriTextBox.Location = new System.Drawing.Point(611, 29);
+            this.categoriTextBox.Location = new System.Drawing.Point(1019, 31);
             this.categoriTextBox.Name = "categoriTextBox";
             this.categoriTextBox.Size = new System.Drawing.Size(100, 20);
             this.categoriTextBox.TabIndex = 4;
@@ -214,7 +219,7 @@
             // 
             // priceOfItemTextBox
             // 
-            this.priceOfItemTextBox.Location = new System.Drawing.Point(418, 29);
+            this.priceOfItemTextBox.Location = new System.Drawing.Point(708, 31);
             this.priceOfItemTextBox.Name = "priceOfItemTextBox";
             this.priceOfItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.priceOfItemTextBox.TabIndex = 3;
@@ -223,7 +228,7 @@
             // 
             // howManyItemsTextBox
             // 
-            this.howManyItemsTextBox.Location = new System.Drawing.Point(247, 29);
+            this.howManyItemsTextBox.Location = new System.Drawing.Point(455, 31);
             this.howManyItemsTextBox.Name = "howManyItemsTextBox";
             this.howManyItemsTextBox.Size = new System.Drawing.Size(100, 20);
             this.howManyItemsTextBox.TabIndex = 2;
@@ -232,7 +237,7 @@
             // 
             // nameOfItemTextBox
             // 
-            this.nameOfItemTextBox.Location = new System.Drawing.Point(79, 29);
+            this.nameOfItemTextBox.Location = new System.Drawing.Point(136, 33);
             this.nameOfItemTextBox.Name = "nameOfItemTextBox";
             this.nameOfItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameOfItemTextBox.TabIndex = 1;
@@ -240,7 +245,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(13, 118);
+            this.AddBtn.Location = new System.Drawing.Point(6, 101);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(75, 23);
             this.AddBtn.TabIndex = 0;
@@ -248,11 +253,29 @@
             this.AddBtn.UseVisualStyleBackColor = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
+            // ShoppingCartDataGridView
+            // 
+            this.ShoppingCartDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShoppingCartDataGridView.Location = new System.Drawing.Point(6, 266);
+            this.ShoppingCartDataGridView.Name = "ShoppingCartDataGridView";
+            this.ShoppingCartDataGridView.Size = new System.Drawing.Size(475, 324);
+            this.ShoppingCartDataGridView.TabIndex = 1;
+            // 
+            // RegistrateBtn
+            // 
+            this.RegistrateBtn.Location = new System.Drawing.Point(118, 120);
+            this.RegistrateBtn.Name = "RegistrateBtn";
+            this.RegistrateBtn.Size = new System.Drawing.Size(75, 23);
+            this.RegistrateBtn.TabIndex = 2;
+            this.RegistrateBtn.Text = "Registrate";
+            this.RegistrateBtn.UseVisualStyleBackColor = true;
+            this.RegistrateBtn.Click += new System.EventHandler(this.Registrerabutton_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 479);
+            this.ClientSize = new System.Drawing.Size(1184, 631);
             this.Controls.Add(this.Views);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -263,6 +286,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.WareHouseGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShoppingCartDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,6 +311,8 @@
         private System.Windows.Forms.Button ShowBtn;
         private System.Windows.Forms.DataGridView WareHouseGridView;
         private System.Windows.Forms.DataGridView StoreDataGridView;
+        private System.Windows.Forms.DataGridView ShoppingCartDataGridView;
+        private System.Windows.Forms.Button RegistrateBtn;
     }
 }
 

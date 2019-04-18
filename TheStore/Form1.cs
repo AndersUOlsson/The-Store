@@ -8,6 +8,7 @@ namespace TheStore
     {
         Stock stock = new Stock();
         List<Product> products;
+        List<Order> orders;
         string[] productInformation = new string[4];
 
         public Form1()
@@ -44,7 +45,17 @@ namespace TheStore
 
         private void Registrerabutton_Click_1(object sender, EventArgs e)
         {
-            
+
+            foreach(DataGridViewRow row in StoreDataGridView.Rows)
+            {
+                if(row.Selected)
+                {
+                    StoreDataGridView.SelectedCells[row.Index].RowIndex.ToString();
+
+                    //TODO: Detta är var jag skall fortsätta i morgon. 
+                }
+
+            }
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
