@@ -37,7 +37,6 @@ namespace TheStore
                 }
                 writer.Close();
             }
-                    
         }
     }
 }

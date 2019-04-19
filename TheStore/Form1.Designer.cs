@@ -30,6 +30,12 @@
         {
             this.Views = new System.Windows.Forms.TabControl();
             this.StoreView = new System.Windows.Forms.TabPage();
+            this.clearBuyBtn = new System.Windows.Forms.Button();
+            this.RegBuyBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.RegistrateBtn = new System.Windows.Forms.Button();
+            this.ShoppingCartDataGridView = new System.Windows.Forms.DataGridView();
             this.StoreDataGridView = new System.Windows.Forms.DataGridView();
             this.WarehouseView = new System.Windows.Forms.TabPage();
             this.WareHouseGridView = new System.Windows.Forms.DataGridView();
@@ -47,15 +53,13 @@
             this.howManyItemsTextBox = new System.Windows.Forms.TextBox();
             this.nameOfItemTextBox = new System.Windows.Forms.TextBox();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.ShoppingCartDataGridView = new System.Windows.Forms.DataGridView();
-            this.RegistrateBtn = new System.Windows.Forms.Button();
             this.Views.SuspendLayout();
             this.StoreView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShoppingCartDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreDataGridView)).BeginInit();
             this.WarehouseView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WareHouseGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShoppingCartDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Views
@@ -71,6 +75,10 @@
             // 
             // StoreView
             // 
+            this.StoreView.Controls.Add(this.clearBuyBtn);
+            this.StoreView.Controls.Add(this.RegBuyBtn);
+            this.StoreView.Controls.Add(this.label6);
+            this.StoreView.Controls.Add(this.label5);
             this.StoreView.Controls.Add(this.RegistrateBtn);
             this.StoreView.Controls.Add(this.ShoppingCartDataGridView);
             this.StoreView.Controls.Add(this.StoreDataGridView);
@@ -82,12 +90,68 @@
             this.StoreView.Text = "Store View";
             this.StoreView.UseVisualStyleBackColor = true;
             // 
+            // clearBuyBtn
+            // 
+            this.clearBuyBtn.Location = new System.Drawing.Point(118, 180);
+            this.clearBuyBtn.Name = "clearBuyBtn";
+            this.clearBuyBtn.Size = new System.Drawing.Size(103, 23);
+            this.clearBuyBtn.TabIndex = 6;
+            this.clearBuyBtn.Text = "Avbryt köp";
+            this.clearBuyBtn.UseVisualStyleBackColor = true;
+            this.clearBuyBtn.Click += new System.EventHandler(this.ClearBuyBtn_Click);
+            // 
+            // RegBuyBtn
+            // 
+            this.RegBuyBtn.Location = new System.Drawing.Point(118, 150);
+            this.RegBuyBtn.Name = "RegBuyBtn";
+            this.RegBuyBtn.Size = new System.Drawing.Size(103, 23);
+            this.RegBuyBtn.TabIndex = 5;
+            this.RegBuyBtn.Text = "Registrera köp";
+            this.RegBuyBtn.UseVisualStyleBackColor = true;
+            this.RegBuyBtn.Click += new System.EventHandler(this.RegBuyBtn_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(700, 246);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Lager";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 247);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Varukorg";
+            // 
+            // RegistrateBtn
+            // 
+            this.RegistrateBtn.Location = new System.Drawing.Point(118, 120);
+            this.RegistrateBtn.Name = "RegistrateBtn";
+            this.RegistrateBtn.Size = new System.Drawing.Size(103, 23);
+            this.RegistrateBtn.TabIndex = 2;
+            this.RegistrateBtn.Text = "Lägg till vara";
+            this.RegistrateBtn.UseVisualStyleBackColor = true;
+            this.RegistrateBtn.Click += new System.EventHandler(this.Registrerabutton_Click_1);
+            // 
+            // ShoppingCartDataGridView
+            // 
+            this.ShoppingCartDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShoppingCartDataGridView.Location = new System.Drawing.Point(6, 266);
+            this.ShoppingCartDataGridView.Name = "ShoppingCartDataGridView";
+            this.ShoppingCartDataGridView.Size = new System.Drawing.Size(443, 324);
+            this.ShoppingCartDataGridView.TabIndex = 1;
+            // 
             // StoreDataGridView
             // 
             this.StoreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StoreDataGridView.Location = new System.Drawing.Point(700, 266);
+            this.StoreDataGridView.Location = new System.Drawing.Point(625, 266);
             this.StoreDataGridView.Name = "StoreDataGridView";
-            this.StoreDataGridView.Size = new System.Drawing.Size(469, 324);
+            this.StoreDataGridView.Size = new System.Drawing.Size(544, 324);
             this.StoreDataGridView.TabIndex = 0;
             // 
             // WarehouseView
@@ -121,9 +185,9 @@
             this.hideBtn.Name = "hideBtn";
             this.hideBtn.Size = new System.Drawing.Size(104, 23);
             this.hideBtn.TabIndex = 4;
-            this.hideBtn.Text = "Hide Inventory";
+            this.hideBtn.Text = "Dölj lager";
             this.hideBtn.UseVisualStyleBackColor = true;
-            this.hideBtn.Click += new System.EventHandler(this.hideBtn_Click);
+            this.hideBtn.Click += new System.EventHandler(this.HideBtn_Click);
             // 
             // ShowBtn
             // 
@@ -131,7 +195,7 @@
             this.ShowBtn.Name = "ShowBtn";
             this.ShowBtn.Size = new System.Drawing.Size(97, 23);
             this.ShowBtn.TabIndex = 3;
-            this.ShowBtn.Text = "Show Inventory";
+            this.ShowBtn.Text = "Visa lager";
             this.ShowBtn.UseVisualStyleBackColor = true;
             this.ShowBtn.Click += new System.EventHandler(this.ShowBtn_Click);
             // 
@@ -141,9 +205,9 @@
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(75, 23);
             this.orderBtn.TabIndex = 2;
-            this.orderBtn.Text = "Order";
+            this.orderBtn.Text = "Beställ";
             this.orderBtn.UseVisualStyleBackColor = true;
-            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
+            this.orderBtn.Click += new System.EventHandler(this.OrderBtn_Click);
             // 
             // removeBtn
             // 
@@ -151,9 +215,9 @@
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Size = new System.Drawing.Size(75, 23);
             this.removeBtn.TabIndex = 1;
-            this.removeBtn.Text = "Remove";
+            this.removeBtn.Text = "Ta bort";
             this.removeBtn.UseVisualStyleBackColor = true;
-            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
+            this.removeBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
             // 
             // groupBox1
             // 
@@ -170,7 +234,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1162, 88);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add an Item";
+            this.groupBox1.Text = "Lägg till/Beställ vara";
             // 
             // label4
             // 
@@ -249,27 +313,9 @@
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(75, 23);
             this.AddBtn.TabIndex = 0;
-            this.AddBtn.Text = "Add";
+            this.AddBtn.Text = "Lägg till";
             this.AddBtn.UseVisualStyleBackColor = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
-            // ShoppingCartDataGridView
-            // 
-            this.ShoppingCartDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShoppingCartDataGridView.Location = new System.Drawing.Point(6, 266);
-            this.ShoppingCartDataGridView.Name = "ShoppingCartDataGridView";
-            this.ShoppingCartDataGridView.Size = new System.Drawing.Size(475, 324);
-            this.ShoppingCartDataGridView.TabIndex = 1;
-            // 
-            // RegistrateBtn
-            // 
-            this.RegistrateBtn.Location = new System.Drawing.Point(118, 120);
-            this.RegistrateBtn.Name = "RegistrateBtn";
-            this.RegistrateBtn.Size = new System.Drawing.Size(75, 23);
-            this.RegistrateBtn.TabIndex = 2;
-            this.RegistrateBtn.Text = "Registrate";
-            this.RegistrateBtn.UseVisualStyleBackColor = true;
-            this.RegistrateBtn.Click += new System.EventHandler(this.Registrerabutton_Click_1);
             // 
             // Form1
             // 
@@ -281,12 +327,13 @@
             this.Text = "Form1";
             this.Views.ResumeLayout(false);
             this.StoreView.ResumeLayout(false);
+            this.StoreView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShoppingCartDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreDataGridView)).EndInit();
             this.WarehouseView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WareHouseGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ShoppingCartDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,6 +360,10 @@
         private System.Windows.Forms.DataGridView StoreDataGridView;
         private System.Windows.Forms.DataGridView ShoppingCartDataGridView;
         private System.Windows.Forms.Button RegistrateBtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button clearBuyBtn;
+        private System.Windows.Forms.Button RegBuyBtn;
     }
 }
 

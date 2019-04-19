@@ -17,6 +17,7 @@ namespace TheStore
         public int Quantity { get; set; }
 
        
+
         public Order(string Name, string Price, string Category, string Quantity)
         {
             this.Name = Name;

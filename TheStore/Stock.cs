@@ -7,6 +7,7 @@ namespace TheStore
     {
         public List<Product> products = new List<Product>();
         FileHandler FileHandler;
+        Form1 Form1;
 
         public Stock()
         {
@@ -19,16 +20,15 @@ namespace TheStore
             return products;
         }
 
-        public void RemoveProduct(string productName)
+        public void RemoveProduct(List<Product> products)
         {
-           foreach(Product product in products)
-           {
-                if (product.Name.Equals(productName))
-                {
-                    products.Remove(product);
-                    FileHandler.WriteCSV(products);
-                    break;
-                }
+            try
+            {
+                FileHandler.WriteCSV(products);
+            }
+            catch (IOException e)
+            {
+                throw e;
             }
         }
 
@@ -51,9 +51,9 @@ namespace TheStore
                     products.Add(product);
                 }
             }
+
             try
             {
-
                 FileHandler.WriteCSV(products);
             }
             catch(IOException e )
@@ -66,7 +66,8 @@ namespace TheStore
         {
             foreach (var p in products)
             {
-                if (p.Name.Equals(product.Name)
+                if (p.Id.Equals(product.Id)
+                    && p.Name.Equals(product.Name)
                     && p.Category.Equals(product.Category)
                     && p.Price == product.Price)
                 {
