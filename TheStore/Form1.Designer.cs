@@ -38,6 +38,11 @@
             this.ShoppingCartDataGridView = new System.Windows.Forms.DataGridView();
             this.StoreDataGridView = new System.Windows.Forms.DataGridView();
             this.WarehouseView = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.antalTxb = new System.Windows.Forms.TextBox();
+            this.IdTbx = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.WareHouseGridView = new System.Windows.Forms.DataGridView();
             this.hideBtn = new System.Windows.Forms.Button();
             this.ShowBtn = new System.Windows.Forms.Button();
@@ -53,13 +58,18 @@
             this.howManyItemsTextBox = new System.Windows.Forms.TextBox();
             this.nameOfItemTextBox = new System.Windows.Forms.TextBox();
             this.AddBtn = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.Views.SuspendLayout();
             this.StoreView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShoppingCartDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreDataGridView)).BeginInit();
             this.WarehouseView.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WareHouseGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Views
@@ -156,6 +166,8 @@
             // 
             // WarehouseView
             // 
+            this.WarehouseView.Controls.Add(this.groupBox3);
+            this.WarehouseView.Controls.Add(this.groupBox2);
             this.WarehouseView.Controls.Add(this.WareHouseGridView);
             this.WarehouseView.Controls.Add(this.hideBtn);
             this.WarehouseView.Controls.Add(this.ShowBtn);
@@ -171,12 +183,59 @@
             this.WarehouseView.Text = "Warehouse View";
             this.WarehouseView.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.antalTxb);
+            this.groupBox2.Controls.Add(this.IdTbx);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(7, 132);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1159, 57);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Beställ Vara";
+            // 
+            // antalTxb
+            // 
+            this.antalTxb.Location = new System.Drawing.Point(452, 19);
+            this.antalTxb.Name = "antalTxb";
+            this.antalTxb.Size = new System.Drawing.Size(100, 20);
+            this.antalTxb.TabIndex = 3;
+            this.antalTxb.TextChanged += new System.EventHandler(this.HowManyItemsTextBox_TextChanged);
+            // 
+            // IdTbx
+            // 
+            this.IdTbx.Location = new System.Drawing.Point(133, 19);
+            this.IdTbx.Name = "IdTbx";
+            this.IdTbx.Size = new System.Drawing.Size(100, 20);
+            this.IdTbx.TabIndex = 2;
+            this.IdTbx.TextChanged += new System.EventHandler(this.IdTbx_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(393, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Antal";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(63, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Varu Id";
+            // 
             // WareHouseGridView
             // 
             this.WareHouseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.WareHouseGridView.Location = new System.Drawing.Point(622, 275);
+            this.WareHouseGridView.Location = new System.Drawing.Point(622, 342);
             this.WareHouseGridView.Name = "WareHouseGridView";
-            this.WareHouseGridView.Size = new System.Drawing.Size(544, 315);
+            this.WareHouseGridView.Size = new System.Drawing.Size(544, 248);
             this.WareHouseGridView.TabIndex = 5;
             // 
             // hideBtn
@@ -201,7 +260,7 @@
             // 
             // orderBtn
             // 
-            this.orderBtn.Location = new System.Drawing.Point(6, 161);
+            this.orderBtn.Location = new System.Drawing.Point(6, 195);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(75, 23);
             this.orderBtn.TabIndex = 2;
@@ -211,7 +270,7 @@
             // 
             // removeBtn
             // 
-            this.removeBtn.Location = new System.Drawing.Point(6, 131);
+            this.removeBtn.Location = new System.Drawing.Point(6, 309);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Size = new System.Drawing.Size(75, 23);
             this.removeBtn.TabIndex = 1;
@@ -317,6 +376,34 @@
             this.AddBtn.UseVisualStyleBackColor = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Location = new System.Drawing.Point(7, 225);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1159, 56);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Ta bort vara ur sortiment";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(134, 18);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 6;
+            this.textBox2.TextChanged += new System.EventHandler(this.IdTbx_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(64, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Varu Id";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,9 +418,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ShoppingCartDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreDataGridView)).EndInit();
             this.WarehouseView.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WareHouseGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -364,6 +455,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button clearBuyBtn;
         private System.Windows.Forms.Button RegBuyBtn;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox antalTxb;
+        private System.Windows.Forms.TextBox IdTbx;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label10;
     }
 }
 

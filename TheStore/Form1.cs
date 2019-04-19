@@ -9,7 +9,7 @@ namespace TheStore
         Stock stock = new Stock();
         List<Product> products;
         private List<Order> orders = new List<Order>();
-        string[] productInformation = new string[4];
+        string[] productInformation = new string[5];
 
         public Form1()
         {
@@ -118,6 +118,11 @@ namespace TheStore
             productInformation[3] = ((TextBox)sender).Text.ToString();
         }
 
+        private void IdTbx_TextChanged(object sender, EventArgs e)
+        {
+            productInformation[4] = ((TextBox)sender).Text.ToString();
+        }
+
         private void AddBtn_Click(object sender, EventArgs e)
         {
             stock.AddProduct(new Product(
@@ -126,31 +131,28 @@ namespace TheStore
             Category: productInformation[3],
             Quantity: productInformation[1]));
             Display();
+            nameOfItemTextBox.Text = string.Empty;
+            howManyItemsTextBox.Text = string.Empty;
+            priceOfItemTextBox.Text = string.Empty;
+            categoriTextBox.Text = string.Empty;
+
+
         }
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in WareHouseGridView.Rows)
-            {
-                if (row.Selected)
-                {
-                    foreach(var p in products)
-                    {
-                        if(p.Name.Contains(row.Cells[0].Value.ToString()))
-                        {
-                            products.Remove(p);
-                            Display();
-                            break;
-                        }
-                    }
-                }
-            }
+            stock.RemoveProduct(productInformation[4]);
+            textBox2.Text = string.Empty;
+            Display();
         }
 
         private void OrderBtn_Click(object sender, EventArgs e)
         {
-            Product product = new Product(productInformation[0], productInformation[2], productInformation[3], productInformation[1]);
-            stock.AddAlreadyExistingProduct(product, false);
+
+            stock.AddToExistedProduct(productInformation[4], productInformation[1]);
+            Display();
+            IdTbx.Text = string.Empty;
+            antalTxb.Text = string.Empty;
         }
 
         private void Views_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,6 +174,8 @@ namespace TheStore
         private void RegBuyBtn_Click(object sender, EventArgs e)
         {
             stock.RemoveProduct(products);
+            ShoppingCartDataGridView.Rows.Clear();
+            DisplayStock();
         }
 
         private void ClearBuyBtn_Click(object sender, EventArgs e)
@@ -192,5 +196,7 @@ namespace TheStore
 
             ShoppingCartDataGridView.Rows.Clear();
         }
+
+        
     }
 }
