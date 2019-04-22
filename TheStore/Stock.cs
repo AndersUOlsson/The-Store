@@ -19,14 +19,6 @@ namespace TheStore
             products = FileHandler.ReadCSV();
         }
 
-        public Form1 Form1
-        {
-            get => default(Form1);
-            set
-            {
-            }
-        }
-
         /// <summary>  
         ///  Returns the stock of the store.
         /// </summary> 
@@ -41,14 +33,8 @@ namespace TheStore
         public void RemoveProduct(List<Product> products)
         {
             //Write to file.
-            try
-            {
-                FileHandler.WriteCSV(products);
-            }
-            catch (IOException e)
-            {
-                throw e;
-            }
+            WriteToFile();
+
         }
 
         /// <summary>  
@@ -75,14 +61,7 @@ namespace TheStore
                 }
             }
             //Write to file
-            try
-            {
-                FileHandler.WriteCSV(products);
-            }
-            catch(IOException e )
-            {
-                throw e;
-            }
+            WriteToFile();
         }
 
         /// <summary>  
@@ -120,14 +99,7 @@ namespace TheStore
             }
 
             //Write to file.
-            try
-            {
-                FileHandler.WriteCSV(products);
-            }
-            catch (IOException e)
-            {
-                throw e;
-            }
+            WriteToFile();
         }
 
         /// <summary>  
@@ -156,7 +128,14 @@ namespace TheStore
                     }
                 }
             }
-            //Write to file.
+            WriteToFile();
+        }
+
+        /// <summary>  
+        ///  Write to file.
+        /// </summary> 
+        private void WriteToFile()
+        {
             try
             {
                 FileHandler.WriteCSV(products);

@@ -16,13 +16,6 @@ namespace TheStore
 
         public int Quantity { get; set; }
 
-        public Form1 Form1
-        {
-            get => default(Form1);
-            set
-            {
-            }
-        }
 
 
         /// <summary>  
