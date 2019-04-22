@@ -19,6 +19,14 @@ namespace TheStore
             products = FileHandler.ReadCSV();
         }
 
+        public Form1 Form1
+        {
+            get => default(Form1);
+            set
+            {
+            }
+        }
+
         /// <summary>  
         ///  Returns the stock of the store.
         /// </summary> 
@@ -146,7 +154,6 @@ namespace TheStore
                         products.Remove(p);
                         break;
                     }
-                    
                 }
             }
             //Write to file.

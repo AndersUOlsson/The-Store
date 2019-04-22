@@ -14,6 +14,30 @@ namespace TheStore
 
         public Guid Id { get; set;}
 
+        internal Stock Stock
+        {
+            get => default(Stock);
+            set
+            {
+            }
+        }
+
+        internal FileHandler FileHandler
+        {
+            get => default(FileHandler);
+            set
+            {
+            }
+        }
+
+        public Form1 Form1
+        {
+            get => default(Form1);
+            set
+            {
+            }
+        }
+
 
         /// <summary>  
         ///  Constructor for a product.

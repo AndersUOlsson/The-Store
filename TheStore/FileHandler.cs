@@ -12,6 +12,14 @@ namespace TheStore
         //The destination where the file for the products is, this is in the App domain (In debug folder).
         private static readonly string filePath = AppDomain.CurrentDomain.BaseDirectory + @"\" + "Lager.csv";
 
+        internal Stock Stock
+        {
+            get => default(Stock);
+            set
+            {
+            }
+        }
+
         /// <summary>  
         ///  This function reads from file and add to stock products.
         /// </summary> 
