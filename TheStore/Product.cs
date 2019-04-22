@@ -14,6 +14,10 @@ namespace TheStore
 
         public Guid Id { get; set;}
 
+
+        /// <summary>  
+        ///  Constructor for a product.
+        /// </summary> 
         public Product(string Name, string Price, string Category, string Quantity)
         {
             this.Name = Name;

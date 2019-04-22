@@ -9,6 +9,7 @@ namespace TheStore
 {
     class FileHandler
     {
+        //The destination where the file for the products is, this is in the App domain (In debug folder).
         private static readonly string filePath = AppDomain.CurrentDomain.BaseDirectory + @"\" + "Lager.csv";
 
         /// <summary>  
@@ -25,7 +26,7 @@ namespace TheStore
         }
 
         /// <summary>  
-        ///  This function write to file when a product is added or removed from stock.
+        ///  This function write to file when a product is added or removed from stock products. 
         /// </summary> 
         public void WriteCSV(List<Product> products)
         {

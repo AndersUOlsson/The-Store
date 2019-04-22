@@ -16,8 +16,10 @@ namespace TheStore
 
         public int Quantity { get; set; }
 
-       
 
+        /// <summary>  
+        ///  Constructor order when buying a product.
+        /// </summary> 
         public Order(string Name, string Price, string Category, string Quantity)
         {
             this.Name = Name;
@@ -25,6 +27,5 @@ namespace TheStore
             this.Category = Category;
             this.Quantity = int.Parse(Quantity);
         }
-        
     }
 }
